@@ -1,0 +1,25 @@
+INFO:aiogram.dispatcher:Start polling
+INFO:aiogram.dispatcher:Run polling for bot @Hrakombuni_bot id=5682303320 - 'Hrakombuni bot'
+INFO:sqlalchemy.engine.Engine:select pg_catalog.version()
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:select current_schema()
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:show standard_conforming_strings
+INFO:sqlalchemy.engine.Engine:[raw sql] ()
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT pg_catalog.pg_class.relname 
+FROM pg_catalog.pg_class JOIN pg_catalog.pg_namespace ON pg_catalog.pg_namespace.oid = pg_catalog.pg_class.relnamespace 
+WHERE pg_catalog.pg_class.relname = $1::VARCHAR AND pg_catalog.pg_class.relkind = ANY (ARRAY[$2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR]) AND pg_catalog.pg_table_is_visible(pg_catalog.pg_class.oid) AND pg_catalog.pg_namespace.nspname != $7::VARCHAR
+INFO:sqlalchemy.engine.Engine:[generated in 0.00033s] ('users', 'r', 'p', 'f', 'v', 'm', 'pg_catalog')
+INFO:sqlalchemy.engine.Engine:COMMIT
+INFO:sqlalchemy.engine.Engine:BEGIN (implicit)
+INFO:sqlalchemy.engine.Engine:SELECT users.id, users.user_id, users.username, users.first_name, users.last_name, users.timestamp 
+FROM users 
+WHERE users.user_id = $1::INTEGER
+INFO:sqlalchemy.engine.Engine:[generated in 0.00021s] (322972065,)
+INFO:sqlalchemy.engine.Engine:UPDATE users SET timestamp=$1::TIMESTAMP WITHOUT TIME ZONE WHERE users.id = $2::INTEGER
+INFO:sqlalchemy.engine.Engine:[generated in 0.00031s] (datetime.datetime(2023, 11, 14, 23, 15, 54, 401386), 1)
+INFO:sqlalchemy.engine.Engine:COMMIT
+WARNING:aiogram.dispatcher:Received SIGINT signal
+INFO:aiogram.dispatcher:Polling stopped for bot @Hrakombuni_bot id=5682303320 - 'Hrakombuni bot'
+INFO:aiogram.dispatcher:Polling stopped
